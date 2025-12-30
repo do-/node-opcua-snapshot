@@ -1,6 +1,6 @@
 {
   "name": "opcua-snapshot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "keywords": [
     "opcua",
@@ -19,10 +19,13 @@
   "author": "Dmitry Ovsyanko",
   "type": "commonjs",
   "main": "index.js",
+  "files": [
+    "/lib"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "node-opcua": "^2.158.0"
+    "node-opcua": "^2.148.0"
   }
 }
