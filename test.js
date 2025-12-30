@@ -2,6 +2,7 @@ const fs            = require ('node:fs')
 const {
     OPCUAClient,
     OPCUAServer,
+    StatusCodes
 }                   = require ('node-opcua')
 const {
     Dumper, 
@@ -85,6 +86,18 @@ async function run (fn, port) {
             varNode.accessLevel = 4
 
             loader.setValues (varNode, values, dates)
+
+        })
+
+        loader.on ('method', varMethod => {
+
+            varMethod.bindMethod ((args, _, callback) => {
+
+                console.log (args)
+
+                callback (null, {statusCode: StatusCodes.Good})
+
+            })
 
         })
 
