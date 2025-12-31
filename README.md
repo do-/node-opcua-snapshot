@@ -1,3 +1,5 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/do-/node-opcua-snapshot)
+
 `node-opcua-snapshot` is a Node.js library that enables snapshot-based management of [OPC UA](https://opcfoundation.org/about/opc-technologies/opc-ua/) server address spaces. It provides two primary capabilities:
 
 * **Extraction**: Connect to an existing OPC UA server and capture its address space structure, node configurations, and relationships into a portable JSON format
@@ -58,9 +60,9 @@ async function dump (filePath, endpointUrl, rootNode) {
 
 ```js
 
-const fs            = require ('node:fs')
-const {OPCUAServer} = require ('node-opcua')
-const {Loader}      = require ('opcua-snapshot')
+const fs                         = require ('node:fs')
+const {OPCUAServer, StatusCodes} = require ('node-opcua')
+const {Loader}                   = require ('opcua-snapshot')
 
 // mock history data
 const MS_IN_DAY     = 1000 * 60 * 60 * 24
@@ -82,6 +84,13 @@ async function run (fn, port) {
         if (!varNode.historizing) return            // for historical ones (in this example)...
         varNode.accessLevel = 4                     // ... only allow HistoryRead
         loader.setValues (varNode, values, dates)   // ... and set the generated values
+    })
+
+    loader.on ('method', varMethod => {
+        varMethod.bindMethod ((args, _, callback) => {
+            console.log (args)
+            callback (null, {statusCode: StatusCodes.Good})
+        })
     })
     
     loader.load (JSON.parse (fs.readFileSync (fn))) // actually load the configuration
