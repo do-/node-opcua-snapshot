@@ -1,31 +1,35 @@
 {
-  "name": "opcua-snapshot",
-  "version": "1.0.4",
-  "description": "",
-  "keywords": [
-    "opcua",
-    "mock",
-    "server"
-  ],
-  "homepage": "https://github.com/do-/node-opcua-snapshot#readme",
-  "bugs": {
-    "url": "https://github.com/do-/node-opcua-snapshot/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/do-/node-opcua-snapshot.git"
-  },
-  "license": "MIT",
-  "author": "Dmitry Ovsyanko",
-  "type": "commonjs",
-  "main": "index.js",
-  "files": [
-    "/lib"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "node-opcua": "^2.148.0"
-  }
+    "name": "opcua-snapshot",
+    "version": "1.0.5",
+    "description": "",
+    "keywords": [
+        "opcua",
+        "mock",
+        "server"
+    ],
+    "homepage": "https://github.com/do-/node-opcua-snapshot#readme",
+    "bugs": {
+        "url": "https://github.com/do-/node-opcua-snapshot/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/do-/node-opcua-snapshot.git"
+    },
+    "license": "MIT",
+    "author": "Dmitry Ovsyanko",
+    "exports": {
+      ".": {
+        "require": "./index.cjs",
+        "import": "./index.mjs"
+      }
+    },
+    "files": [
+        "/lib"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "node-opcua": "^2.148.0"
+    }
 }
