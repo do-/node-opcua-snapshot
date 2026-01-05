@@ -41,7 +41,8 @@
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/__tests__/data",
-      "/__tests__/lib"
+      "/__tests__/lib",
+      "/__tests__/helpers"
     ]
   },
   "dependencies": {
