@@ -35,4 +35,18 @@ module.exports = function (server) {
 
   }
 
+  {
+
+    const dataType = 11
+
+    ns.addVariable ({
+      nodeId: 'ns=1;s=MyDevice.H1',
+      browseName: {namespaceIndex: 1, name: 'H1'},
+      componentOf: 'ns=1;s=MyDevice',
+      dataType,
+      minimumSamplingInterval: 1000,
+    })
+
+  }
+
 }

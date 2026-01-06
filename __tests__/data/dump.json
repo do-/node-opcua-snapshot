@@ -20,6 +20,14 @@
             "type": "BaseDataVariableType",
             "dataType": 12,
             "value": "String value"
+        },
+        {
+            "class": "Variable",
+            "ns": 1,
+            "id": "s=MyDevice.H1",
+            "name": "H1",
+            "type": "BaseDataVariableType",
+            "dataType": 0
         }
     ]
 }
