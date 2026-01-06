@@ -1,0 +1,25 @@
+{
+    "class": "Object",
+    "ns": 1,
+    "id": "s=MyDevice",
+    "name": "MyDevice",
+    "HasComponent": [
+        {
+            "class": "Method",
+            "ns": 1,
+            "id": "s=MyDevice.M1",
+            "name": "M1",
+            "inputArguments": [],
+            "outputArguments": []
+        },
+        {
+            "class": "Variable",
+            "ns": 1,
+            "id": "s=MyDevice.V1",
+            "name": "V1",
+            "type": "BaseDataVariableType",
+            "dataType": 12,
+            "value": "String value"
+        }
+    ]
+}
